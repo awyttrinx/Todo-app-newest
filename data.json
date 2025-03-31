@@ -1,0 +1,30 @@
+{
+  "todos": [
+    {
+      "user": "shanayalim06",
+      "text": "informatik abi lernen ",
+      "done": false
+    },
+    {
+      "user": "linus.wittrin",
+      "text": "hausverwaltung",
+      "done": false
+    },
+    {
+      "user": "antonia.wittrin",
+      "text": "learn for sts",
+      "done": true
+    },
+    {
+      "user": "antonia.wittrin",
+      "text": "go outside for a walk",
+      "done": true
+    },
+    {
+      "user": "antonia.wittrin",
+      "text": "meditate 20 min",
+      "done": true
+    }
+  ],
+  "users": []
+}

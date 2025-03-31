@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - <%= username %></title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <nav>
+    <a href="/">Logout</a>
+  </nav>
+
+  <main class="container">
+    <h1>Welcome, <%= username %>!</h1>
+
+    <section class="todo-section">
+      <h2>🌟 To-Do List 🌟</h2>
+      <form class="add-todo-form" action="/add" method="POST">
+        <input type="hidden" name="user" value="<%= username %>" />
+        <input type="text" name="text" placeholder="Add a new task..." required />
+        <button type="submit">Add</button>
+      </form>
+
+      <ul class="todo-list">
+        <% todos.forEach(todo => { %>
+          <li>
+            <form action="/toggle" method="POST">
+              <input type="hidden" name="user" value="<%= username %>">
+              <input type="hidden" name="text" value="<%= todo.text %>">
+              <label>
+                <input 
+                  type="checkbox" 
+                  name="done" 
+                  onchange="this.form.submit()" 
+                  <%= todo.done ? 'checked' : '' %> 
+                />
+                <%= todo.text %>
+              </label>
+            </form>
+            <form action="/delete" method="POST">
+              <input type="hidden" name="user" value="<%= username %>">
+              <input type="hidden" name="text" value="<%= todo.text %>">
+              <button title="Delete">🗑️</button>
+            </form>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
+
+    <section class="progress-section">
+      <h2 class="progress-title">⭐ Progress ⭐</h2>
+      <% Object.entries(progress).forEach(([name, value]) => { %>
+        <div class="progress-block">
+          <div class="bar-bg">
+            <!-- Hier ist der Teil, den du meinst: -->
+            <div 
+              class="bar" 
+              style="--progress: <%= value %>%; background: <%= colors[name] || '#a3d9a5' %>;">
+            </div>
+          </div>
+          <span><%= name %></span>
+        </div>
+      <% }) %>
+    </section>
+  </main>
+</body>
+</html>
