@@ -1,18 +1,6 @@
-# To-Do Web App
+# To-Do App
 
-Diese Web-App erlaubt Nutzer:innen, ihre täglichen Aufgaben zu planen und den Fortschritt mit anderen zu vergleichen.
+This web application allows users to plan their daily tasks and compare their productivity progress with others.
+As a User you can add and delete daily tasks, you login in your personal space where you only see your to dos but the progress in a graphic with your friends.
 
-## Abgabe 1 (Frontend)
-
-- 3 HTML-Seiten: Login, Dashboard, About
-- Verlinkt untereinander
-- Eigene CSS-Datei ohne Framework
-- Responsive Design mit 2 Breakpoints
-
-## Geplante Features
-
-- Login mit 2 festgelegten Usern
-- Max. 5 To-Dos pro Tag
-- Fortschrittsvergleich zwischen Antonia & Linus
-
-## Autor: Dein Name
+## Autor: Antonia Wittrin 
